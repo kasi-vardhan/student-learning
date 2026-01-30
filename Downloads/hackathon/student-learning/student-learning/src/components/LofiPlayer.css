@@ -1,0 +1,196 @@
+/* LofiPlayer.css */
+.lofi-player-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 200px;
+    background: var(--surface-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: inherit;
+}
+
+[data-theme='dark'] .lofi-player-container {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.lofi-player-container.minimized {
+    width: 48px;
+    height: 90px;
+    border-radius: 30px;
+}
+
+.lofi-header {
+    padding: 10px 12px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.minimized .lofi-header {
+    flex-direction: column;
+    height: 40px;
+    padding: 8px 0;
+    gap: 4px;
+}
+
+.lofi-icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lofi-icon-btn:hover {
+    opacity: 1;
+}
+
+.lofi-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.track-info {
+    text-align: center;
+}
+
+.track-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.track-status {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin: 4px 0 0;
+}
+
+.lofi-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lofi-main-btn {
+    width: 44px;
+    height: 44px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.lofi-main-btn:hover {
+    transform: scale(1.1);
+    background: #4f46e5;
+}
+
+.lofi-secondary-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lofi-secondary-btn:hover {
+    color: var(--primary-color);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    color: var(--text-secondary);
+}
+
+.volume-control input {
+    flex: 1;
+    height: 4px;
+    accent-color: #6366f1;
+    cursor: pointer;
+}
+
+.lofi-mini-play {
+    width: 100%;
+    height: 50px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.lofi-open-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: white;
+    color: #6366f1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s;
+}
+
+[data-theme='dark'] .lofi-open-btn {
+    background: #1e293b;
+    color: #60a5fa;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lofi-open-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}

@@ -1,0 +1,245 @@
+.quiz-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.quiz-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quiz-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: width 0.3s ease-in-out;
+    border-radius: 4px;
+}
+
+.question-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-hover);
+    margin-bottom: 2rem;
+    animation: slideUp 0.4s ease-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.question-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+/* MCQ Options */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
+}
+
+.option-label:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.option-label.selected {
+    background-color: #eff6ff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.radio-input {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color);
+}
+
+.option-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Results Section */
+.result-card {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--box-shadow-hover);
+    animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.score-display {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.score-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.solutions-section {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.solution-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.solution-card.correct-card {
+    border-left-color: var(--success-color);
+}
+
+.solution-card.incorrect-card {
+    border-left-color: var(--danger-color);
+}
+
+.solution-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.q-num {
+    color: var(--text-secondary);
+}
+
+.solution-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 2.5rem;
+}
+
+.answer-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-danger {
+    color: var(--danger-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,300 @@
+/* Professional Glows and Enhanced Cards */
+.result-card-enhanced {
+    background: #ffffff;
+    /* Solid background for maximum contrast */
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Professional Light Glow */
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    outline: 1px solid rgba(37, 99, 235, 0.05);
+    outline-offset: 4px;
+}
+
+.result-card-enhanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Learning Style Themes */
+.theme-fast {
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.12);
+}
+
+.theme-engaged {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
+}
+
+.theme-average {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.12);
+}
+
+.theme-slow {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.12);
+}
+
+.theme-disengaged {
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.12);
+}
+
+/* Distinct Box Themes */
+.theme-metrics {
+    border-color: rgba(14, 165, 233, 0.3);
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.12);
+    background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+}
+
+.theme-recommendations {
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.12);
+    background: linear-gradient(to bottom right, #ffffff, #f5f3ff);
+}
+
+/* Animation Classes */
+.animate-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+.segmentation-badge h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.metric-row strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjusting existing tips container */
+.tips-container {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: #ffffff;
+    border-radius: 32px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 0 30px rgba(37, 99, 235, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.tips-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.actions-area {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* AI Assistant Section Styles */
+.ai-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.ai-pulse-icon {
+    color: var(--primary-color);
+    animation: aiPulse 3s infinite;
+}
+
+@keyframes aiPulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px var(--primary-color));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px var(--primary-color));
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px var(--primary-color));
+    }
+}
+
+.ai-insight-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.insight-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ai-insight-card h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.focus-text {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1rem;
+}
+
+.efficiency-box {
+    margin-top: auto;
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.efficiency-box span {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.efficiency-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.efficiency-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 3px;
+    transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.efficiency-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem !important;
+}
+
+.path-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.path-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.path-list li svg {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* Course Card Styles */
+.course-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.platform-tag {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.course-link {
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.course-link:hover {
+    color: var(--primary-color);
+}

@@ -1,0 +1,151 @@
+/* InputPage.css */
+
+.input-page-wrapper {
+    min-height: calc(100vh - 64px);
+    background-color: #f8fafc;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+    position: relative;
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+.input-page-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    top: -10%;
+    left: -10%;
+    z-index: 0;
+    animation: floatBg 15s ease-in-out infinite alternate;
+}
+
+.input-page-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, transparent 70%);
+    bottom: -10%;
+    right: -10%;
+    z-index: 0;
+    animation: floatBg 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatBg {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+
+    /* Professional Card Styling */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+.range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.range-wrap input[type=range] {
+    flex: 1;
+    cursor: pointer;
+}
+
+.range-value {
+    font-weight: 700;
+    color: white;
+    background: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    min-width: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+}

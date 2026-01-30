@@ -1,0 +1,144 @@
+/* SummaryPage.css */
+.summary-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.summary-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+.summary-card {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.summary-textarea {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+}
+
+.summary-textarea:focus {
+    border-color: var(--primary-color);
+    background: white;
+}
+
+.word-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.summary-content {
+    flex: 1;
+    overflow-y: auto;
+    background: #f1f5f9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+[data-theme='dark'] .summary-content {
+    background: #0f172a;
+}
+
+.placeholder-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-secondary);
+    gap: 1.5rem;
+}
+
+.copy-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.copy-btn:hover {
+    color: var(--primary-color);
+}
+
+.loading-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.ai-loading-bar {
+    width: 60px;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-loading-bar::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: var(--primary-color);
+    animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0% {
+        left: -40%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.result-markdown {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.result-markdown p {
+    margin-bottom: 1rem;
+}
+
+/* Dark Mode Adjustments */
+[data-theme='dark'] .summary-textarea {
+    background: #1e293b;
+    border-color: #334155;
+    color: white;
+}
+
+[data-theme='dark'] .summary-textarea:focus {
+    background: #1e293b;
+    border-color: #60a5fa;
+}

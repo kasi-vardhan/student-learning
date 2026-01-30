@@ -1,0 +1,234 @@
+.hero {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(37, 99, 235, 0.1);
+    z-index: -1;
+    transform: rotate(-1deg);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Illustration Mockup */
+.illustration-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.c1 {
+    top: 20%;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.c2 {
+    bottom: 20%;
+    left: -20px;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    width: 72px;
+    /* Slightly larger */
+    height: 72px;
+    border-radius: 20px;
+    /* Softer radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.icon-blue {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: var(--primary-color);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+}
+
+.icon-green {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: var(--success-color);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+
+}
+
+.icon-orange {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: var(--warning-color);
+    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2);
+}
+
+/* Animations for Section */
+.features .feature-card:nth-child(1) {
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+.features .feature-card:nth-child(2) {
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
+}
+
+.features .feature-card:nth-child(3) {
+    animation: fadeInUp 0.6s ease-out 0.6s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+}
