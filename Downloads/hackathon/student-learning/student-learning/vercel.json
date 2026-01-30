@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "cd student-learning && npm run build",
+  "outputDirectory": "student-learning/dist",
   "framework": "vite",
-  "installCommand": "npm install"
+  "installCommand": "cd student-learning && npm install"
 }
